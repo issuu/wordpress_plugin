@@ -2,7 +2,7 @@
   /*
   Plugin Name: Magma
   Plugin URI: https://github.com/MagmaHQ/wordpress_plugin
-  Description: Access your Magma publications directly from WordPress
+  Description: Lets you post your article to Wordpress directly from Magma
   Author: Magma
   Version: 0.1
   Author URI: http://www.magmahq.com
@@ -12,7 +12,7 @@
 
 add_filter( 'template_redirect', 'magma_api_redirect' );
 function magma_api_redirect() {
-  if ( $_SERVER['REQUEST_METHOD'] == 'POST' && preg_match( "/magma_api/", $_SERVER['REQUEST_URI']) ) {
+  if ( $_SERVER['REQUEST_METHOD'] == 'POST' && preg_match( '/magma_api\/?$/', $_SERVER['REQUEST_URI']) ) {
     status_header( 200 );
     $user_id = magma_basic_auth_user();
     if ( $user_id != 0 ) {
