@@ -36,8 +36,8 @@ function magma_create_articles( $user_id ){
 
     $article = $articles[$i-1];
 
-    $title      = trim( (string) $article->title );
     $content    = (string)$article->text;
+    $title      = magma_define_title( $article, $content );
     $publish_at = trim( (string) $article->start_publishing );
 
     $content .= magma_format_assets_for_content( $article );
@@ -59,6 +59,16 @@ function magma_create_articles( $user_id ){
       echo 'Error importing post';
     }
   }
+}
+
+// We pass the content as a reference as we might modify it.
+function magma_define_title( $article, &$content ){
+  $title = trim( (string) $article->title );
+  if( preg_match( '#<h1.*?>(.*?)</h1>#is', $content, $matches )){
+    $title = $matches[1];
+    $content = preg_replace( '#<h1.*?>.*?</h1>#is', '' , $content, 1 );
+  }
+  return $title;
 }
 
 function magma_set_article_status( $article, $publish_at ){
