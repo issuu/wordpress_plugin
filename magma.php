@@ -3,8 +3,8 @@
   Plugin Name: Magma
   Plugin URI: https://github.com/MagmaHQ/wordpress_plugin
   Description: Lets you post your article to Wordpress directly from Magma
-  Author: Magma
-  Version: 0.1
+  Author: MagmaHQ
+  Version: 0.0.2
   Author URI: http://www.magmahq.com
   */
 
