@@ -2,7 +2,7 @@
   /*
   Plugin Name: Magma
   Plugin URI: https://github.com/MagmaHQ/wordpress_plugin
-  Description: Lets you post your article to Wordpress directly from Magma
+  Description: Lets you publish your article to Wordpress directly from Magma
   Author: MagmaHQ
   Version: 0.0.2
   Author URI: http://www.magmahq.com
